@@ -1,0 +1,96 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: rgb(0, 61, 91);
+    display: flex;
+    margin-top: 5vh;
+    align-items: center;
+    justify-content: center;
+    font-family: "Croissant One", serif;
+  }
+
+  .cont {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+      "menus main"
+      "menus main";
+
+    width: 90vw;
+    height: 90vh;
+    background: rgb(223, 220, 227);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+  }
+
+  #menus {
+    grid-area: menus;
+    background: rgb(230, 196, 154);
+    border-radius: 20px;
+    padding: 10px;
+    max-width: 30rem;
+    
+  }
+
+  #main {
+    grid-area: main;
+    padding: 10px;
+    
+  }
+
+  #menu {
+    display: flex;
+    margin: 20px 0;
+  }
+
+  #search {
+    width: 200px;
+    height: 20px;
+    margin: 0 10%;
+    border-radius: 20px;
+    padding: 8px;
+    border: none;
+  }
+
+  #menuicon {
+    padding: 5px;
+  }
+
+  #mainheading {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 5%;
+  }
+
+  .date {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+
+  .showtask {
+    background-color: rgb(175, 150, 129);
+    width: 90%;
+    height: 20%;
+    margin: 10px 0;
+    border: none;
+    padding: 5%;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #tasklist {
+    margin: 10%;
+    
+  }
+  #tasklist li{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

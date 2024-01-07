@@ -1,106 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Poppins:ital,wght@1,500&family=Rubik+Doodle+Shadow&display=swap"
     rel="stylesheet" />
 </head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background: rgb(0, 61, 91);
-    display: flex;
-    margin-top: 5vh;
-    align-items: center;
-    justify-content: center;
-    font-family: "Croissant One", serif;
-  }
-
-  .cont {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:
-      "menus main main main main"
-      "menus main main main main";
-
-    width: 90vw;
-    height: 90vh;
-    background: rgb(223, 220, 227);
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 5px;
-  }
-
-  #menus {
-    grid-area: menus;
-    background: rgb(230, 196, 154);
-    border-radius: 20px;
-    padding: 10px;
-    
-  }
-
-  #main {
-    grid-area: main;
-    padding: 10px;
-  }
-
-  #menu {
-    display: flex;
-    margin: 20px 0;
-  }
-
-  #search {
-    width: 200px;
-    height: 20px;
-    margin: 0 10%;
-    border-radius: 20px;
-    padding: 8px;
-    border: none;
-  }
-
-  #menuicon {
-    padding: 5px;
-  }
-
-  #mainheading {
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 5%;
-  }
-
-  .date {
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 20px;
-  }
-
-  .showtask {
-    background-color: rgb(175, 150, 129);
-    width: 90%;
-    height: 35%;
-    margin: 10px 0;
-    border: none;
-    padding: 5%;
-    font-size: 20px;
-    border-radius: 10px;
-    font-family: "Poppins", sans-serif;
-  }
-
-  #tasklist {
-    margin: 10%;
-  }
-</style>
-
 <body>
   <div class="cont">
     <div id="menus">
@@ -110,57 +20,16 @@
         <span id="menuicon"><img src="\todolist\menu.png" alt="" /></span>
       </div>
       <h2>Tasks</h2>
-      <div id="task"></div>
       <ul id="tasklist"></ul>
     </div>
     <div id="main">
       <h1 id="mainheading">To-Do-List</h1>
       <div class="date">Day Date</div>
-      <textarea name="" id="" cols="30" rows="10" class="showtask"></textarea>
+      <textarea name="" id="" cols="20" rows="2" class="showtask"></textarea>
       <img src="\todolist\plus.png" width="" alt="" id="add" />
       <img src="\todolist\trash-2.png" alt="" id="deletebutton" />
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
-<script>
-  let add = document.querySelector("#add");
-  let deletebutton = document.querySelector("#deletebutton");
-  let tasklist = document.querySelector("#tasklist");
-  let task = document.querySelector("#task");
-  function displaydate(element) {
-    let date = new Date();
-    let year = date.getFullYear();
-    let monthlist = ["jan", "Feb", "March", "April", "May", "June", "july", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    let month = monthlist[date.getMonth()];
-    let daylist = ["sun", "Mon", "Tue", "Wed", "Thur", "fri", "sat"];
-    let day = daylist[date.getDay()];
-    let datee = date.getDate();
-    let display = document.querySelector(element);
-    display.textContent =  `${day}, ${datee}/${month}/${year}` ;
-
-  }
-  displaydate(".date");
-  add.addEventListener("click", function taskcreated(e) {
-    let text = document.querySelector(".showtask").value;
-    if (text == "") {
-      alert("Please Enter Valid Task");
-    }
-    else {
-      let addtask = document.createElement("li");
-      addtask.textContent = text;
-      tasklist.appendChild(addtask);
-      
-    }
-  });
-  deletebutton.addEventListener("click", function deletetask(e) {
-    if (tasklist.children.length == 0) {
-
-      alert("You are not created any Task");
-    }
-    else {
-      tasklist.removeChild(tasklist.lastElementChild);
-    }
-  })
-</script>
-
 </html>
